@@ -11,36 +11,68 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="blog-style.css">
 </head>
 <body>
   <header class="header">
     <div class="header-inner">
-      <a class="brand" href="./"><span class="brand-logo">🌱</span> Meu Primeiro Negócio</a>
+      <a class="brand" href="./">
+        <span class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 8-7 0 5-3 8-8 7z"/><path d="M12 15c0-3-2-5-6-5 0 4 2 6 6 5z"/></svg>
+        </span>
+        Meu Primeiro Negócio
+      </a>
       <nav class="nav">
-        <a href="./">Simulador</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="./" class="nav-cta">Simulador grátis</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Blog</h1>
-      <p>Dicas simples para você abrir o seu negócio sem medo de prejuízo.</p>
-    </section>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Blog</span>
+        <h1>Abra seu negócio sem medo de prejuízo</h1>
+        <p>Guias simples e diretos sobre custos, preço de venda e ponto de equilíbrio. Sem jargão e sem planilha complicada.</p>
+        <a class="btn" href="quanto-custa-abrir-confeitaria.html">Ler o artigo mais recente</a>
+      </div>
+      <div class="hero-art">
+        <img src="hero-negocio.svg" alt="Ilustração de um bolo, uma calculadora, moedas e um gráfico de crescimento">
+      </div>
+    </div>
+  </section>
 
-    <a class="post-card" href="quanto-custa-abrir-confeitaria.html">
-      <span class="tag">Custos e preço</span>
-      <h2>Quanto custa abrir uma confeitaria (ou negócio de alimentação) e como calcular os custos iniciais?</h2>
-      <p>Entenda a diferença entre custos fixos e variáveis, defina o preço de venda e descubra quantas unidades você precisa vender para não ter prejuízo.</p>
-      <span class="read-more">Ler artigo →</span>
-    </a>
+  <main class="container">
+    <h2 class="section-title">Artigos recentes</h2>
+
+    <div class="post-grid">
+      <a class="post-card" href="quanto-custa-abrir-confeitaria.html">
+        <div class="post-thumb">
+          <img src="hero-negocio.svg" alt="Ilustração de confeitaria, calculadora e moedas">
+        </div>
+        <div class="post-body">
+          <span class="tag">Custos e preço</span>
+          <h3>Quanto custa abrir uma confeitaria (ou negócio de alimentação) e como calcular os custos iniciais?</h3>
+          <p>Entenda custos fixos e variáveis, defina o preço de venda e descubra quantas unidades vender para não ter prejuízo.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+    </div>
+
+    <section class="banner">
+      <div>
+        <h2>Calcule os números do seu negócio</h2>
+        <p>Simulador gratuito: descubra investimento, preço e ponto de equilíbrio em 2 minutos.</p>
+      </div>
+      <a class="btn orange" href="./">Testar o simulador</a>
+    </section>
   </main>
 
   <footer class="footer">
-    Ferramenta educativa. Os resultados são estimativas e não substituem a orientação de um contador.
+    <p><a href="./">Meu Primeiro Negócio</a> · <a href="blog.html">Blog</a></p>
+    <p>Ferramenta educativa. Os resultados são estimativas e não substituem a orientação de um contador.</p>
   </footer>
 </body>
 </html>

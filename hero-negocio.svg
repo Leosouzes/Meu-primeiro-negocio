@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Ilustração de um bolo, uma calculadora, moedas e um gráfico de crescimento">
+  <circle cx="300" cy="215" r="175" fill="#e8f5f0"/>
+  <circle cx="500" cy="70" r="26" fill="#dbeafe"/>
+  <circle cx="70" cy="80" r="16" fill="#fde7dc"/>
+  <circle cx="540" cy="340" r="12" fill="#e8f5f0"/>
+
+  <!-- gráfico -->
+  <rect x="38" y="110" width="178" height="132" rx="16" fill="#fff" stroke="#d6e4df" stroke-width="2"/>
+  <rect x="62" y="190" width="28" height="30" rx="5" fill="#9fd8c4"/>
+  <rect x="104" y="170" width="28" height="50" rx="5" fill="#4fb896"/>
+  <rect x="146" y="146" width="28" height="74" rx="5" fill="#0b7a5c"/>
+  <path d="M60 170 L104 150 L146 128 L186 126" fill="none" stroke="#1e6fd9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="186" cy="126" r="6" fill="#1e6fd9"/>
+
+  <!-- prato e bolo -->
+  <ellipse cx="300" cy="318" rx="130" ry="18" fill="#cfdad5"/>
+  <rect x="294" y="300" width="12" height="18" fill="#b9c8c2"/>
+  <ellipse cx="300" cy="300" rx="120" ry="14" fill="#e3ebe8"/>
+  <rect x="212" y="222" width="176" height="76" rx="14" fill="#f2b98d"/>
+  <rect x="212" y="248" width="176" height="10" fill="#e9a574"/>
+  <rect x="232" y="172" width="136" height="58" rx="14" fill="#f9d2dc"/>
+  <path d="M232 214 q17 28 34 0 q17 28 34 0 q17 28 34 0 q17 28 34 0 v-12 h-136z" fill="#f4b6c7"/>
+  <path d="M300 154 q4 -20 18 -26" fill="none" stroke="#2f7a4d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="300" cy="162" r="14" fill="#e4412f"/>
+  <circle cx="295" cy="157" r="4" fill="#fff" opacity=".55"/>
+
+  <!-- calculadora -->
+  <g transform="rotate(6 480 235)">
+    <rect x="422" y="148" width="116" height="170" rx="16" fill="#12201c"/>
+    <rect x="434" y="162" width="92" height="40" rx="8" fill="#c9f0df"/>
+    <text x="518" y="190" text-anchor="end" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#0b5a43">R$ 14</text>
+    <g fill="#3a4b46">
+      <rect x="434" y="214" width="26" height="24" rx="6"/><rect x="467" y="214" width="26" height="24" rx="6"/><rect x="500" y="214" width="26" height="24" rx="6"/>
+      <rect x="434" y="246" width="26" height="24" rx="6"/><rect x="467" y="246" width="26" height="24" rx="6"/><rect x="500" y="246" width="26" height="24" rx="6"/>
+      <rect x="434" y="278" width="26" height="24" rx="6"/><rect x="467" y="278" width="26" height="24" rx="6"/>
+    </g>
+    <rect x="500" y="278" width="26" height="24" rx="6" fill="#f26b3a"/>
+  </g>
+
+  <!-- moedas -->
+  <g>
+    <rect x="78" y="306" width="78" height="12" fill="#e9a21c"/>
+    <ellipse cx="117" cy="318" rx="39" ry="10" fill="#e9a21c"/>
+    <ellipse cx="117" cy="306" rx="39" ry="10" fill="#f6c14a"/>
+    <rect x="78" y="294" width="78" height="12" fill="#e9a21c"/>
+    <ellipse cx="117" cy="294" rx="39" ry="10" fill="#f6c14a"/>
+    <rect x="78" y="282" width="78" height="12" fill="#e9a21c"/>
+    <ellipse cx="117" cy="282" rx="39" ry="10" fill="#fad36b"/>
+    <text x="117" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#b87a0a">R$</text>
+  </g>
+</svg>
