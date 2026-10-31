@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Ilustração de um bolo no pote com uma etiqueta de preço e moedas">
+  <ellipse cx="240" cy="196" rx="200" ry="142" fill="#e3f1ec"/>
+  <circle cx="414" cy="66" r="14" fill="#fde3d6"/>
+  <circle cx="60" cy="96" r="9" fill="#d5e6fb"/>
+  <ellipse cx="240" cy="326" rx="170" ry="9" fill="#c9ddd5" opacity=".7"/>
+
+  <!-- pote -->
+  <rect x="168" y="150" width="144" height="170" rx="22" fill="#ffffff" stroke="#cfe0d9" stroke-width="3"/>
+  <rect x="180" y="264" width="120" height="44" rx="12" fill="#8a5a3c"/>
+  <rect x="180" y="226" width="120" height="38" fill="#f9d2dc"/>
+  <rect x="180" y="200" width="120" height="26" fill="#f2b98d"/>
+  <rect x="180" y="174" width="120" height="26" fill="#f9d2dc"/>
+  <path d="M180 174 q15 -14 30 0 q15 -14 30 0 q15 -14 30 0 q15 -14 30 0" fill="#fff" stroke="none"/>
+  <rect x="160" y="128" width="160" height="30" rx="10" fill="#0b7a5c"/>
+  <rect x="160" y="146" width="160" height="12" rx="6" fill="#086149"/>
+  <circle cx="240" cy="168" r="9" fill="#e4412f"/>
+  <circle cx="237" cy="165" r="2.800" fill="#fff" opacity=".55"/>
+
+  <!-- etiqueta de preço -->
+  <g transform="rotate(-8 372 126)">
+    <path d="M318 86 h92 a10 10 0 0 1 10 10 v60 a10 10 0 0 1 -10 10 h-92 l-24 -40 z" fill="#f26b3a"/>
+    <circle cx="316" cy="126" r="7" fill="#fff"/>
+    <text x="370" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#fff" opacity=".9">PREÇO</text>
+    <text x="370" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="25" font-weight="700" fill="#fff">R$ 14</text>
+  </g>
+
+  <!-- moedas -->
+  <rect x="70" y="298" width="68" height="12" fill="#e2a022"/>
+  <ellipse cx="104" cy="310" rx="34" ry="9" fill="#e2a022"/>
+  <ellipse cx="104" cy="298" rx="34" ry="9" fill="#f4c04c"/>
+  <rect x="70" y="286" width="68" height="12" fill="#e2a022"/>
+  <ellipse cx="104" cy="286" rx="34" ry="9" fill="#f4c04c"/>
+  <rect x="70" y="274" width="68" height="12" fill="#e2a022"/>
+  <ellipse cx="104" cy="274" rx="34" ry="9" fill="#f9d673"/>
+  <text x="104" y="277.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#a56d08">R$</text>
+</svg>

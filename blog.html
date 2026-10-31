@@ -36,15 +36,15 @@
         <span class="eyebrow">Blog</span>
         <h1>Abra seu negócio sem medo de prejuízo</h1>
         <p>Guias simples e diretos sobre custos, preço de venda e ponto de equilíbrio. Sem jargão e sem planilha complicada.</p>
-        <a class="btn" href="quanto-custa-abrir-confeitaria.html">Ler o artigo mais recente</a>
+        <a class="btn" href="#artigos">Ver os artigos</a>
       </div>
       <div class="hero-art art">
-        <img src="hero-negocio.svg" alt="Ilustração de um bolo, uma calculadora, moedas e um gráfico de crescimento">
+        <img class="photo" src="foto-capa.jpg" alt="Confeiteira preparando doces na cozinha" onerror="this.onerror=null;this.src='hero-negocio.svg';this.classList.remove('photo')">
       </div>
     </div>
   </section>
 
-  <main class="container">
+  <main class="container" id="artigos">
     <div class="section-head">
       <h2 class="section-title">Artigo em destaque</h2>
     </div>
@@ -52,7 +52,7 @@
     <a class="post-card" href="quanto-custa-abrir-confeitaria.html">
       <div class="post-thumb">
         <div class="art">
-          <img src="hero-negocio.svg" alt="Ilustração de confeitaria, calculadora e moedas">
+          <img class="photo" src="foto-capa.jpg" alt="Confeiteira preparando doces na cozinha" onerror="this.onerror=null;this.src='hero-negocio.svg';this.classList.remove('photo')">
         </div>
       </div>
       <div class="post-body">
@@ -63,7 +63,38 @@
       </div>
     </a>
 
-    <div class="soon">Novos artigos em breve: preço de venda, margem de lucro e como começar com pouco dinheiro.</div>
+    <div class="section-head">
+      <h2 class="section-title">Mais artigos</h2>
+    </div>
+
+    <div class="post-grid">
+      <a class="post-card compact" href="como-calcular-preco-de-venda-bolo-doces.html">
+        <div class="post-thumb">
+          <div class="art">
+            <img class="photo" src="foto-preco.jpg" alt="Bolo no pote com etiqueta de preço" onerror="this.onerror=null;this.src='preco-venda.svg';this.classList.remove('photo')">
+          </div>
+        </div>
+        <div class="post-body">
+          <span class="tag">Custos e preço</span>
+          <h3>Como calcular o preço de venda de bolos e doces (sem chutar e sem perder dinheiro)</h3>
+          <p>Um passo a passo de 4 etapas, com exemplo pronto, para chegar a um preço que cobre custos, taxas e ainda deixa lucro.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="post-card compact" href="como-comecar-negocio-com-pouco-dinheiro.html">
+        <div class="post-thumb">
+          <div class="art">
+            <img class="photo" src="foto-comecar.jpg" alt="Empreendedora organizando o primeiro lote de produtos" onerror="this.onerror=null;this.src='comecar-pouco.svg';this.classList.remove('photo')">
+          </div>
+        </div>
+        <div class="post-body">
+          <span class="tag">Primeiros passos</span>
+          <h3>Como começar um negócio com pouco dinheiro: 7 passos para sair do papel</h3>
+          <p>Comece pequeno, teste o mercado e cresça com o dinheiro que o próprio negócio gera, sem se endividar logo no início.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+    </div>
 
     <section class="banner">
       <div>

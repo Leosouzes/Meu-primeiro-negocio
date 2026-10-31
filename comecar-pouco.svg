@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Ilustração de uma planta crescendo em um vaso, uma lista de tarefas e moedas">
+  <ellipse cx="240" cy="196" rx="200" ry="142" fill="#e3f1ec"/>
+  <circle cx="420" cy="70" r="14" fill="#d5e6fb"/>
+  <circle cx="62" cy="86" r="9" fill="#fde3d6"/>
+  <ellipse cx="240" cy="326" rx="170" ry="9" fill="#c9ddd5" opacity=".7"/>
+
+  <!-- vaso e planta -->
+  <path d="M190 252 h100 l-12 64 a10 10 0 0 1 -10 8 h-56 a10 10 0 0 1 -10 -8 z" fill="#d9825b"/>
+  <rect x="182" y="240" width="116" height="20" rx="8" fill="#e8946c"/>
+  <path d="M240 240 C240 210 240 190 240 150" fill="none" stroke="#2f7a4d" stroke-width="6" stroke-linecap="round"/>
+  <path d="M240 190 C240 160 214 142 180 146 C180 178 204 196 240 190 z" fill="#4fb896"/>
+  <path d="M240 168 C240 136 268 116 306 120 C306 154 280 174 240 168 z" fill="#0b7a5c"/>
+  <path d="M240 150 C240 128 252 108 270 98 C282 118 276 140 240 150 z" fill="#6cc9a6"/>
+
+  <!-- lista -->
+  <g transform="rotate(-5 110 150)">
+    <rect x="50" y="92" width="130" height="116" rx="14" fill="#fff" stroke="#d3e3dc" stroke-width="2"/>
+    <circle cx="74" cy="124" r="9" fill="#0b7a5c"/>
+    <path d="M69.500 124 l3.500 3.500 l6 -7" fill="none" stroke="#fff" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="92" y="119" width="64" height="9" rx="4.500" fill="#cfe0d9"/>
+    <circle cx="74" cy="152" r="9" fill="#0b7a5c"/>
+    <path d="M69.500 152 l3.500 3.500 l6 -7" fill="none" stroke="#fff" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="92" y="147" width="52" height="9" rx="4.500" fill="#cfe0d9"/>
+    <circle cx="74" cy="180" r="9" fill="#fff" stroke="#9fd3c1" stroke-width="2.500"/>
+    <rect x="92" y="175" width="58" height="9" rx="4.500" fill="#e3ece8"/>
+  </g>
+
+  <!-- moeda grande e pequenas -->
+  <circle cx="378" cy="244" r="40" fill="#e2a022"/>
+  <circle cx="378" cy="244" r="40" fill="#f4c04c"/>
+  <circle cx="378" cy="244" r="30" fill="none" stroke="#e2a022" stroke-width="3"/>
+  <text x="378" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#a56d08">R$</text>
+  <circle cx="420" cy="296" r="16" fill="#f4c04c"/>
+  <circle cx="420" cy="296" r="11" fill="none" stroke="#e2a022" stroke-width="2"/>
+  <circle cx="332" cy="298" r="12" fill="#f9d673"/>
+  <circle cx="332" cy="298" r="8" fill="none" stroke="#e2a022" stroke-width="2"/>
+</svg>
