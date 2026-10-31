@@ -125,6 +125,16 @@ h2{font-size:1.9rem;line-height:1.15}
 .opt{display:block;width:100%;text-align:left;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:9px 12px;margin-top:6px;font:inherit;color:var(--ink);cursor:pointer}.opt.ok{border-color:var(--green);background:var(--soft)}.opt.bad{border-color:var(--red)}
 .qq{margin-bottom:16px}.fb{font-size:.88rem;color:var(--muted);margin:4px 0 0}details.card summary{cursor:pointer}
 .ps{display:none}
+.lead{background:linear-gradient(135deg,var(--soft),var(--card));border:2px solid var(--green);border-radius:20px;padding:20px;margin-bottom:14px;box-shadow:var(--sh)}
+.lead h3{margin:0 0 4px;font-size:1.25rem}.lead .sub{color:var(--muted);margin:0 0 14px}
+.lead form{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}.lead .fw{grid-column:1/-1}
+.lead input[type=text],.lead input[type=email]{width:100%;background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:12px;font:inherit}
+.lead input:focus{border-color:var(--blue);outline:0}.lead .btn{width:100%}.lead .btn[disabled]{opacity:.65;cursor:wait}
+.lead .priv{font-size:.8rem;color:var(--muted);margin:0}.lead .msg{font-size:.88rem;min-height:1.2em;color:var(--red);margin:0}
+.lead .cons{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:.85rem;color:var(--muted);cursor:pointer}.lead .cons input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--green)}
+.lead .ok-box{display:flex;gap:12px;align-items:flex-start}.lead .ok-box i{flex:none;width:42px;height:42px;border-radius:50%;background:var(--green);color:var(--onp);display:grid;place-items:center;font-style:normal;font-size:1.3rem}
+.lead .hp{position:absolute;left:-9999px;opacity:0}
+@media(max-width:600px){.lead form{grid-template-columns:1fr}}
 @media print{header,#hero,#app,footer,.skip,.gbtn,.gm{display:none!important}.ps{display:block!important;color:#000;background:#fff;padding:20px}.ps td{border-bottom:1px solid #ccc}body{background:#fff}}
 </style>
 </head>
@@ -302,18 +312,48 @@ const ent=i=>`<aside class="ent"><b>Entenda: ${ENT[i][0]}</b>${ENT[i][1]}<i>${EN
 const ER=[['Misturar conta pessoal e da empresa','Sem separação, você nunca sabe se o negócio dá lucro ou se está sendo bancado pelo seu salário.'],['Esquecer o pró-labore','Se o seu "salário" não entra nas contas, o lucro aparece maior do que é.'],['Ignorar taxa de cartão e impostos','Eles saem do preço de cada venda e podem consumir boa parte da margem.'],['Copiar o preço do concorrente','Os custos dele são diferentes dos seus. Calcule o seu próprio preço mínimo.'],['Confundir faturamento com lucro','Faturar R$ 20.000 não quer dizer lucrar R$ 20.000: custos e despesas saem antes.'],['Não ter reserva de emergência','Um mês fraco ou um imprevisto pode quebrar um negócio que, no resto do tempo, vai bem.'],['Estimar vendas de forma otimista demais','Compare com o ponto de equilíbrio e teste cenários piores no simulador.'],['Nunca revisar os preços','Custos sobem com o tempo. Se o preço fica parado, a margem encolhe sem você perceber.']];
 const QZ=[['Preço R$ 10, custo variável R$ 4, sem taxas. Qual é a margem de contribuição por unidade?',['R$ 4','R$ 6','R$ 10'],1,'Preço menos custo variável: 10 − 4 = R$ 6.'],['Com custos fixos de R$ 600 e margem de R$ 6 por unidade, qual é o ponto de equilíbrio?',['60 unidades','100 unidades','600 unidades'],1,'Custos fixos divididos pela margem: 600 ÷ 6 = 100.'],['Qual destes é um custo fixo?',['Embalagem de cada venda','Comissão por venda','Aluguel da loja'],2,'O aluguel é pago todo mês, venda você muito ou pouco.'],['Para que serve o pró-labore?',['Separar o sustento do dono do lucro do negócio','Pagar impostos','Comprar estoque'],0,'Ele define o "salário" do dono e evita confundir lucro com retirada.'],['Lucro mensal de R$ 1.000 e investimento de R$ 12.000: em quanto tempo o investimento volta?',['6 meses','12 meses','24 meses'],1,'Investimento dividido pelo lucro: 12.000 ÷ 1.000 = 12 meses.']];
 function sec7(){return `<h3 class="hsec">Reserva de emergência</h3><div class="card"><div class="sl"><div><span>Meses de custos fixos guardados</span><span id="rmv"></span></div><input type="range" min="1" max="12" value="${S.rm}" id="rm" aria-label="Meses de reserva"></div><div class="sl"><div><span>Parte do lucro mensal guardada</span><span id="rsv"></span></div><input type="range" min="5" max="100" step="5" value="${S.res}" id="rs2" aria-label="Percentual do lucro guardado"></div><p class="cap" id="rvo"></p></div>
-<h3 class="hsec">Erros comuns de quem está começando</h3>${ER.map(([t,d])=>`<details class="card"><summary><b>${t}</b></summary><p class="cap" style="border:0;margin:6px 0 0">${d}</p></details>`).join('')}
-<h3 class="hsec">Quiz: fixe o que aprendeu</h3><div class="card">${QZ.map((q,k)=>`<div class="qq" data-q="${k}"><b>${k+1}. ${q[0]}</b>${q[1].map(o=>`<button class="opt">${o}</button>`).join('')}<p class="fb"></p></div>`).join('')}<b id="qs">Acertos: 0 de ${QZ.length}</b></div>
-<div class="card"><button class="btn pri" id="pr">Baixar resumo (imprimir / PDF)</button><p class="cap">Abre a janela de impressão com um resumo do seu plano. Escolha "Salvar como PDF". Se não abrir aqui, abra a página em uma aba própria.</p></div>`}
+${leadHTML()}
+<div class="card"><button class="btn pri" id="pr">Baixar resumo (imprimir / PDF)</button><p class="cap">Abre a janela de impressão com um resumo do seu plano. Escolha "Salvar como PDF". Se não abrir aqui, abra a página em uma aba própria.</p></div>
+<h3 class="hsec">Quer aprender mais? (opcional)</h3>
+<div class="card"><button class="btn sec" id="qb" aria-expanded="false" aria-controls="qbox">🧠 Testar meus conhecimentos (quiz de 5 perguntas)</button><div id="qbox" hidden style="margin-top:14px">${QZ.map((q,k)=>`<div class="qq" data-q="${k}"><b>${k+1}. ${q[0]}</b>${q[1].map(o=>`<button class="opt">${o}</button>`).join('')}<p class="fb"></p></div>`).join('')}<b id="qs">Acertos: 0 de ${QZ.length}</b></div></div>
+<details class="card"><summary><b>Erros comuns de quem está começando</b></summary>${ER.map(([t,d])=>`<p class="cap" style="border:0;margin:8px 0 0"><b>${t}.</b> ${d}</p>`).join('')}</details>`}
 function bind7(v){v.querySelector('#ge').insertAdjacentHTML('beforebegin',sec7());
  const rv=()=>{const r=calc(S),alvo=S.rm*r.fixed,mes=r.profit>0?alvo/(r.profit*S.res/100):null;$('rvo').innerHTML=`Meta da reserva: <b>${brl.format(alvo)}</b> (${S.rm} meses de custos fixos). `+(mes?`Guardando ${S.res}% do lucro (${brl.format(r.profit*S.res/100)} por mês), você forma a reserva em cerca de <b>${num.format(mes)} meses</b>.`:'Sem lucro positivo a reserva não se forma: revise preço, custos ou a meta.')};
  const sl=()=>{$('rmv').textContent=S.rm+' meses';$('rsv').textContent=S.res+'%';rv()};
  $('rm').oninput=e=>{S.rm=+e.target.value;sl()};$('rs2').oninput=e=>{S.res=+e.target.value;sl()};sl();
  let ok=0,done=0;
  v.querySelectorAll('.qq').forEach(q=>{const k=+q.dataset.q;q.querySelectorAll('.opt').forEach((b,j)=>b.onclick=()=>{if(q.dataset.d)return;q.dataset.d=1;done++;const c=QZ[k][2];if(j===c){ok++;b.classList.add('ok')}else{b.classList.add('bad');q.querySelectorAll('.opt')[c].classList.add('ok')}q.querySelector('.fb').textContent=(j===c?'Certo! ':'Quase. ')+QZ[k][3];$('qs').textContent=`Acertos: ${ok} de ${QZ.length}`+(done===QZ.length?(ok>=4?' 🎉 Você já pensa como dono!':' · Releia as etapas e tente de novo.'):'')})});
- $('pr').onclick=()=>{fillPrint();window.print()}}
+ $('pr').onclick=()=>{fillPrint();window.print()};bindLead();
+ $('qb').onclick=()=>{const b=$('qbox'),open=b.hidden;b.hidden=!open;$('qb').setAttribute('aria-expanded',open);$('qb').textContent=open?'Esconder o quiz':'🧠 Testar meus conhecimentos (quiz de 5 perguntas)'}}
 function fillPrint(){const r=calc(S),t=(a,b)=>`<tr><td>${a}</td><td>${b}</td></tr>`;$('ps').innerHTML=`<h1>Plano financeiro: ${esc(P[S.type].n)}</h1><p>Gerado em ${new Date().toLocaleDateString('pt-BR')} no Meu Primeiro Negócio. Estimativas educativas, não substituem um contador.</p><table>${t('Investimento inicial',brl.format(S.inv))+t('Custos fixos por mês',brl.format(r.fixed))+t('Preço médio de venda',brl.format(r.p))+t('Margem por unidade',brl.format(r.cm))+t('Ponto de equilíbrio',r.be?Math.ceil(r.be)+' un./mês':'—')+t('Vendas esperadas',Math.round(r.q)+' un./mês')+t('Lucro mensal estimado',brl.format(r.profit))+t('Margem de lucro',num.format(r.margin)+'%')+t('Retorno do investimento',fMes(r.payback))}</table><h3>Custos fixos</h3><table>${S.fixed.map(i=>t(esc(i.n),brl.format(i.v))).join('')}</table>`}
 function sv0(){try{localStorage.setItem('mpn_s',JSON.stringify({S,SC}))}catch(e){}}
+/* ---------- Captura de e-mail (opcional) ---------- */
+const WEB3_KEY='ad7a6845-44c0-4868-8006-aca688b689f0';
+const LEAD_OK='Recebemos seu pedido! Em breve o relatório chega ao seu e-mail. Se não aparecer, olhe também o spam.';
+function leadSummary(){const r=calc(S);
+ return [`Tipo de negócio: ${P[S.type].n}`,`Investimento inicial: ${brl.format(S.inv)}`,`Custos fixos por mês: ${brl.format(r.fixed)}`,`Preço médio de venda: ${brl.format(r.p)}`,`Margem por unidade: ${brl.format(r.cm)}`,`Ponto de equilíbrio: ${r.be?Math.ceil(r.be)+' un./mês':'sem margem positiva'}`,`Vendas esperadas: ${Math.round(r.q)} un./mês`,`Lucro mensal estimado: ${brl.format(r.profit)}`,`Margem de lucro: ${num.format(r.margin)}%`,`Retorno do investimento: ${fMes(r.payback)}`,'Custos fixos: '+S.fixed.map(i=>`${i.n} ${brl.format(i.v)}`).join('; ')].join('\n')}
+function leadHTML(){
+ if(S.lead)return `<div class="lead" id="lead"><div class="ok-box"><i>✓</i><div><h3>Tudo certo!</h3><p class="sub" style="margin:0">${LEAD_OK}</p></div></div></div>`;
+ return `<div class="lead" id="lead"><h3>Quer receber o resumo completo do seu negócio por e-mail?</h3><p class="sub">Envie o relatório detalhado para o seu e-mail e consulte quando quiser. É opcional: o seu resultado já está na tela.</p>
+ <form id="lf" novalidate><input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div><label for="ln">Nome</label><input type="text" id="ln" name="name" autocomplete="given-name" placeholder="Como posso te chamar?"></div>
+  <div><label for="le">E-mail</label><input type="email" id="le" name="email" autocomplete="email" placeholder="voce@email.com" inputmode="email"></div>
+  <label class="cons fw"><input type="checkbox" id="lc2"><span>Concordo em receber o relatório e dicas práticas por e-mail.</span></label>
+  <div class="fw"><button class="btn pri" id="lb" type="submit">Enviar meu relatório</button></div>
+  <p class="msg fw" id="lm" role="alert"></p>
+  <p class="priv fw">🔒 Zero spam. Apenas o seu relatório e dicas práticas. Você pode pedir a remoção dos seus dados quando quiser.</p></form></div>`}
+function bindLead(){const f=$('lf');if(!f)return;
+ f.onsubmit=async e=>{e.preventDefault();
+  const name=f.name.value.trim(),email=f.email.value.trim(),m=$('lm'),b=$('lb');
+  if(f.botcheck.value)return;
+  if(name.length<2){m.textContent='Digite seu nome.';f.name.focus();return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){m.textContent='Esse e-mail parece incompleto. Confira e tente de novo.';f.email.focus();return}
+  if(!$('lc2').checked){m.textContent='Marque a caixinha para autorizar o envio.';return}
+  m.textContent='';b.disabled=true;b.textContent='Enviando…';
+  try{const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:WEB3_KEY,subject:'Novo relatório solicitado: Meu Primeiro Negócio',from_name:'Meu Primeiro Negócio',name,email,message:leadSummary(),botcheck:''})});
+   const j=await res.json();if(!res.ok||!j.success)throw new Error(j.message||'erro');
+   S.lead=true;sv0();$('lead').outerHTML=leadHTML();
+  }catch(err){m.textContent='Não consegui enviar agora. Confira sua conexão e tente de novo. Seu resultado continua aqui na tela.';b.disabled=false;b.textContent='Enviar meu relatório'}}}
 const views=[
  {html:()=>`<h2>Que tipo de negócio você vai abrir?</h2><p class="lead">Escolha o mais parecido. Já carregamos um exemplo para você ver tudo funcionando — depois é só trocar pelos seus números.</p>
   <div class="types">${Object.entries(P).map(([k,p])=>`<button class="type ${S.type===k?'on':''}" data-t="${k}"><span class="e">${ico(k)}</span><b>${p.n}</b><span>${p.ex}</span></button>`).join('')}</div>`,
